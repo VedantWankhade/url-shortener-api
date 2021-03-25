@@ -1,0 +1,17 @@
+type urlObj {
+    id: Int!
+    long_url: String!
+    short_url: String!
+}
+
+type Query {
+
+    about: String!
+    get(short_url: String!): urlObj!
+    getList: [urlObj!]!
+}
+
+type Mutation {
+
+    short(long_url: String!): String!
+}
