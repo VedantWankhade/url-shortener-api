@@ -2,8 +2,9 @@
   "name": "url-shortener-api",
   "version": "1.0.0",
   "description": "API for url shortener",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon -e js, graphql -w . -w .env ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
