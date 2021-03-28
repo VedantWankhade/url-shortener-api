@@ -21,9 +21,15 @@ function getDB() {
 
 async function getNextSequence(collection_name) {
 
-    const current =
-        await db.collection('counters').updateOne({ _id: collection_name }, { $inc: { current: 1 }}, {returnOriginal: false})
-    return (current + 1)
+const result = await db
+    .collection('counters')
+    .findOneAndUpdate(
+      { _id: collection_name },
+      { $inc: { current: 1 } },
+      { returnOriginal: false },
+);
+    // console.log(result.value.current);
+    return result.value.current;
 }
 
 module.exports = { connectToDB, getDB, getNextSequence };

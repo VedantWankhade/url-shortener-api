@@ -7,8 +7,8 @@ async function short(_, { long_url }) {
 
     const short_url = nanoid.nanoid(SHORT_URL_LENGTH);
     const db = getDB();
-    const newId = getNextSequence('urls');
-
+    const newId = await getNextSequence('urls');
+    console.log(newId)
     await db.collection('urls').insertOne({ id: newId, long_url, short_url });
     return short_url;
 }

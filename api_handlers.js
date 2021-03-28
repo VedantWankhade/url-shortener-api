@@ -26,7 +26,7 @@ const server = new ApolloServer({
 
 function installHandler(app) {
 
-    server.applyMiddleware({ app, path: '/api' })
+    server.applyMiddleware({ app, path: '/api', cors: true });
 }
 
 module.exports = {installHandler}
