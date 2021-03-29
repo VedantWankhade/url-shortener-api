@@ -32,4 +32,9 @@ const result = await db
     return result.value.current;
 }
 
-module.exports = { connectToDB, getDB, getNextSequence };
+async function getUrlObj(short_url) {
+    const urlObj = await db.collection('urls').findOne({ short_url });
+    return urlObj;
+}
+
+module.exports = { connectToDB, getDB, getNextSequence, getUrlObj };

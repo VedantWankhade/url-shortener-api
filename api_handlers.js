@@ -1,4 +1,4 @@
-const {ApolloServer} = require('apollo-server-express')
+const { ApolloServer } = require('apollo-server-express')
 const fs = require('fs');
 
 const about = require('./about.js')
@@ -29,4 +29,4 @@ function installHandler(app) {
     server.applyMiddleware({ app, path: '/api', cors: true });
 }
 
-module.exports = {installHandler}
+module.exports = { installHandler }
